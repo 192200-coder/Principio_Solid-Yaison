@@ -1,0 +1,19 @@
+# Archivos compilados de Java
+*.class
+
+# Carpetas comunes de salida
+/bin/
+/out/
+/target/
+
+# Logs
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.iml
