@@ -1,8 +1,13 @@
+//  EmployeeContractor.java
 package liskov;
 
 public class EmployeeContractor extends Employee {
+    public EmployeeContractor(String fullName, int hoursWorked, int extraHours) {
+        super(fullName, hoursWorked, extraHours);
+    }
 
-    public EmployeeContractor(String fullname, int hoursWorked, int extraHours) {
-        super(fullname, hoursWorked, extraHours);
+    @Override
+    public double calculateSalary() {
+        return 40 * (hoursWorked + extraHours);
     }
 }

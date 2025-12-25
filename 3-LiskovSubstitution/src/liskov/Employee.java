@@ -1,4 +1,6 @@
+//  Employee.java
 package liskov;
+
 public abstract class Employee {
 
     protected String fullName;
@@ -24,8 +26,5 @@ public abstract class Employee {
     }
 
     // método virtual en C# → método normal en Java
-    public double calculateSalary(boolean isFullTime) {
-        double hourValue = isFullTime ? 50 : 40;
-        return hourValue * (hoursWorked + extraHours);
-    }
+    public abstract double calculateSalary();
 }

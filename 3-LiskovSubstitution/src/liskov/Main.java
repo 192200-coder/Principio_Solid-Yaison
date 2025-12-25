@@ -1,3 +1,4 @@
+//  Main.java
 package liskov;
 
 import java.util.ArrayList;
@@ -12,9 +13,11 @@ public class Main {
         calculateSalaryMonthly(employees);
     }
 
+    // Main.java
     public static void calculateSalaryMonthly(List<Employee> employees) {
         for (Employee item : employees) {
-            double salary = item.calculateSalary(item instanceof EmployeeFullTime);
+            // Liskov: Tratamos a todos como "Employee" y ellos saben qué hacer
+            double salary = item.calculateSalary();
             System.out.println("The " + item.getFullName() + "'s salary is " + salary);
         }
     }
