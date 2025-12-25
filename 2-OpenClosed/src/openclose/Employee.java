@@ -1,3 +1,4 @@
+//  Employee.java
 package openclose;
 
 public abstract class Employee {
@@ -13,6 +14,6 @@ public abstract class Employee {
         return fullname;
     }
 
-    // Cada empleado dirá cómo se calcula su salario
+    // El contrato que permite la extensión
     public abstract double calculateSalary();
 }
