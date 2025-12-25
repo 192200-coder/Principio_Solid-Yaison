@@ -1,32 +1,15 @@
+//  Developer.java
 package interfacesegregation;
 
-public class Developer implements IActivities {
+import interfacesegregation.Interface.IWorkable;
+
+public class Developer implements IWorkable {
 
     public Developer() {
     }
 
     @Override
-    public void plan() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void comunicate() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void design() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public void develop() {
         System.out.println("I'm developing the functionalities required");
-    }
-
-    @Override
-    public void test() {
-        throw new UnsupportedOperationException();
     }
 }

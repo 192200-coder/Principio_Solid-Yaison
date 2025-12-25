@@ -1,6 +1,11 @@
+//  ScrumMaster.java
 package interfacesegregation;
 
-public class ScrumMaster implements IActivities {
+import interfacesegregation.Interface.IPlannable;
+import interfacesegregation.Interface.ITestable;
+import interfacesegregation.Interface.IWorkable;
+
+public class ScrumMaster implements IWorkable, IPlannable, ITestable {
 
     public ScrumMaster() {
     }
@@ -22,11 +27,11 @@ public class ScrumMaster implements IActivities {
 
     @Override
     public void develop() {
-        System.out.println("I'm developing the functionalities required");
+        System.out.println("I'm helping with development tasks");
     }
 
     @Override
     public void test() {
-        System.out.println("I'm testing the application");
+        System.out.println("I'm coordinating the application tests");
     }
 }
