@@ -1,8 +1,8 @@
 package com.example.dependencyinversion.Controllers;
 
-import com.example.dependencyinversion.Log.Logbook;
+import com.example.dependencyinversion.Interfaces.ILogger;
+import com.example.dependencyinversion.Interfaces.IStudentRepository;
 import com.example.dependencyinversion.Models.Student;
-import com.example.dependencyinversion.Repository.StudentRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,13 +11,18 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentController {
 
-    // ❌ Dependencias creadas internamente
-    private StudentRepository studentRepository = new StudentRepository();
-    private Logbook logbook = new Logbook();
+    private final IStudentRepository studentRepository;
+    private final ILogger logger;
+
+    // Inyección por constructor: Spring se encarga de pasar las implementaciones
+    public StudentController(IStudentRepository studentRepository, ILogger logger) {
+        this.studentRepository = studentRepository;
+        this.logger = logger;
+    }
 
     @GetMapping
     public List<Student> get() {
-        logbook.add("returning student's list");
+        logger.add("Returning student's list");
         return studentRepository.getAll();
     }
 }

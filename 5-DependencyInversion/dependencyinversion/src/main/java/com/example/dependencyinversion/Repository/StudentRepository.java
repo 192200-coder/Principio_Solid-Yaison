@@ -1,11 +1,15 @@
 package com.example.dependencyinversion.Repository;
 
+import com.example.dependencyinversion.Interfaces.IStudentRepository;
 import com.example.dependencyinversion.Models.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentRepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class StudentRepository implements IStudentRepository {
 
     private static List<Student> collection;
 
