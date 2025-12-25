@@ -1,12 +1,11 @@
 package openclose;
 
-public class EmployeeFullTime {
+public class EmployeeFullTime extends Employee {
     private String fullname;
     private int hoursWorked;
 
     public EmployeeFullTime(String fullname, int hoursWorked) {
-        this.fullname = fullname;
-        this.hoursWorked = hoursWorked;
+        super(fullname, hoursWorked);
     }
 
     public String getFullname() {
@@ -15,5 +14,10 @@ public class EmployeeFullTime {
 
     public int getHoursWorked() {
         return hoursWorked;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return 30000 * hoursWorked;
     }
 }
